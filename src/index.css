@@ -1,0 +1,134 @@
+:root {
+    --color1: white;
+    --color2: lightgray;
+    --color3: #17BAE2;
+    --color4: darkgray;
+
+    --line-cl: #E6E8EC;
+}
+.text_color3 {
+    color: var(--color3);
+}
+.text_weight500 {
+    font-weight: 500;
+}
+.text_align_justify {
+    text-align: justify;
+}
+
+.size560 {
+    max-width: 560px;
+}
+
+body {
+    background-color: var(--color2)
+}
+/* Шапка */
+
+.main_header {
+    height: 108px;
+    width: 100%;
+}
+
+.header_block1 {
+    height: 108px;
+    background-color: var(--color1);
+    border-bottom: 2px var(--color2);
+}
+.main_header_block1_container {
+    height: 100%;
+}
+.header_block1_flex {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4%;
+}
+    /* Лого */
+    .logo_block {
+        width: 480px;
+        min-width: 370px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4%;
+    }
+    .logo_block_img {
+        width: 80px;
+    }
+    .logo_block_name {
+        font-size: 26px;
+        color: var(--color3);
+        font-weight: 500;
+    }
+
+    /* Поиск и пользователь */
+    .userAndSearch_block {
+        display: flex;
+        justify-content: space-between;
+        max-width: 380px;
+        min-width: 240px;
+        width: 25%;
+        gap: 36px;
+    }
+    .search {
+        border: 1px solid var(--line-cl) !important;
+        border-radius: 8px;
+        background-color: var(--color1) !important;
+    }
+    .userimg {
+        width: 44px;
+    }
+/* Вход */
+.reg_card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+.confirm-button {
+    border-radius: 6px;
+    border: 1px solid var(--color3);
+    margin: 0;
+}
+.confirm-button:hover {
+    background-color: var(--color3);
+    color:var(--color1);
+    border-color: var(--color3);
+}
+.reg_card_linkAndbutton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main_upload {
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.upload_line {
+    height: 600px;
+    width: 600px;
+    border: 6px dashed var(--color3);
+    border-radius: 25px;
+}
+.upload_block {
+    display: flex;
+    gap: 60px;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    width: 500px;
+    background-color: var(--color1);
+}
+.upload_h {
+    max-width: 400px;
+    color: var(--color4);
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    margin: 0;
+}
+.imgupload {
+    width: 200px;
+}
