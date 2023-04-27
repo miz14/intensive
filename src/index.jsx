@@ -14,15 +14,21 @@ import { UploadPage } from './routes/Upload'
 
 import Login from './routes/Login'
 
+//import './uikit/css/uikit.css';
+import './uikit/css/uikit-rtl.css';
 import './default_index.css'
 import './index.css'
 import './old_index.css'
+
+
+import TEST from './routes/TEST';
 
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<Root />}>
       <Route index element={<ServiceInfoPage />}/>
       <Route path="login" element={<Login/>}/>
+      <Route path="test" element={<TEST/>}/>
       <Route path='upload' element={
           <RequireAuth>
               <UploadPage />

@@ -31,24 +31,24 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(
-                URL_AUTH,
-                JSON.stringify({"user": user, "password": password}),
-                {
-                    headers: {'Content-Type' : 'application/json'},
-                    withCredentials: true //пока пусть будет
-                }
-            );
-            // const response =
-            // {
-            //     "data": {"accessToken": "123-123-123"},
-            //     "status": 200,
-            //     "headers": {
-            //         "content-length": "162",
-            //         "content-type": "application/json; charset=utf-8"
+            // const response = await axios.post(
+            //     URL_AUTH,
+            //     JSON.stringify({"user": user, "password": password}),
+            //     {
+            //         headers: {'Content-Type' : 'application/json'},
+            //         withCredentials: true //пока пусть будет
             //     }
+            // );
+            const response =
+            {
+                "data": {"accessToken": "123-123-123"},
+                "status": 200,
+                "headers": {
+                    "content-length": "162",
+                    "content-type": "application/json; charset=utf-8"
+                }
     
-            // }
+            }
             dispatchAuth(setAuth({"user": user, "password": password, "accessToken": response.data.accessToken}))   
 
             navigate(fromPage, {replace: true})
