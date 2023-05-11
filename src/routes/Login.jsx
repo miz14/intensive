@@ -1,5 +1,5 @@
-import { useRef, useState, useEffect } from "react";
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useRef, useState, useEffect} from "react";
+import { useLocation, useNavigate, NavLink } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { setAuth } from "../store/AuthSlice";
 import axios, {URL_AUTH} from "../api/axios";
@@ -17,12 +17,8 @@ const Login = () => {
     const [password, setPassword] = useState(null);
     
     const [error, setError] = useState(null);
-    const [loginStatus, setLoginStatus] = useState(false);
 
     const dispatchAuth = useDispatch();
-    useEffect(() => {
-        userRef.current.focus()
-    }, [])
 
     useEffect(() => {
         setError(null)
@@ -41,7 +37,7 @@ const Login = () => {
             // );
             const response =
             {
-                "data": {"accessToken": "123-123-123"},
+                "data": {"accessToken": "123-123-123", "firstName": "Иван", "lastName" : "Иванов"},
                 "status": 200,
                 "headers": {
                     "content-length": "162",
@@ -49,7 +45,7 @@ const Login = () => {
                 }
     
             }
-            dispatchAuth(setAuth({"user": user, "password": password, "accessToken": response.data.accessToken}))   
+            dispatchAuth(setAuth({"user": user, "password": password, "accessToken": response.data.accessToken, firstName: response.data.firstName, lastName : response.data.lastName}))   
 
             navigate(fromPage, {replace: true})
             setLoginStatus(true);
@@ -64,9 +60,9 @@ const Login = () => {
             } else {
                 setError("Login Failed");
             }
-            errRef.current.focus();
         }
     }   
+
 
     return (
     <>  
@@ -77,7 +73,6 @@ const Login = () => {
                 <div className="uk-card uk-card-body uk-card-small">
                     <h4 className="uk-margin-small-bottom uk-margin-small-top">Логин</h4>
                         <input 
-                            ref={userRef}
                             className="uk-input"
                             name="username"
                             type="text"
@@ -97,15 +92,18 @@ const Login = () => {
                             autoComplete="off"
                             rows="3"/>
                         <div className="reg_card_linkAndbutton">
-                        <div>
-                        <span>Еще нет аккаунта?</span>
-                        <a className="text_color3">Зарегистрироваться</a>
+                            <div>
+                            <span>Еще нет аккаунта? </span>
+                            <NavLink className="text_color3" to="/register" >
+                               Зарегистрироваться
+                            </NavLink>
+                            
+                            </div>
+                            <button type="submit" className="uk-button uk-button-default confirm-button">Отправить</button>
                         </div>
-                        <button type="submit" className="uk-button uk-button-default confirm-button">Отправить</button>
-                        </div>
-                    </div>
-                    {error ? (<p ref={errRef}>{error}</p>) : null}
+                    {error ? (<p>{error}</p>) : null}
                 </div>
+            </div>
             </form>
         </main>
         </>

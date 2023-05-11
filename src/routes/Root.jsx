@@ -7,10 +7,8 @@ import useMediaQuery from '../components/MediaQuer';
 
 const Root = () => {
     const notMobile = useMediaQuery("(min-width: 760px)");
-    console.log(notMobile);
     const auth = useSelector(state => state.auth.data);
     const dispatch = useDispatch();
-    console.log(auth.accessToken)
     return(
         <>
         <header className="uk-margin-medium-bottom main_header">
@@ -37,7 +35,7 @@ const Root = () => {
                                         ) :
                                         (   
                                             <>
-                                            <li><p className='user_text'><NavLink to="/upload">Загрузить след</NavLink></p></li>
+                                            <li><p className='user_text'><NavLink to="/traces">Загрузить след</NavLink></p></li>
                                             <li><button className="uk-button uk-button-default uk-button-small" onClick={() => dispatch(signout())}>Выход</button></li>
                                             </>
                                         )}

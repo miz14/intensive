@@ -7,7 +7,9 @@ export default axios.create(
 );
 const URL_AUTH = "/auth";
 const URL_UPLOAD = "/upload";
-export {URL_AUTH, URL_UPLOAD}; 
+const URL_REG = "/register";
+const URL_TRACES = '/traces';
+export {URL_AUTH, URL_UPLOAD, URL_REG, URL_TRACES}; 
 
 // ------------------------------------
 
@@ -37,5 +39,20 @@ export {URL_AUTH, URL_UPLOAD};
     //     headers: {
     //         'Content-Type': 'multipart/form-data'
     // }
+
+// ------------------------------------
+
+// ".../register" - для регистрации
+// ОЖИДАЕТ
+    // JSON.stringify({"firstname": name, "lastname": familia, "reglogin": user, "password": password}),
+    //     {
+    //         headers: {'Content-Type' : 'application/json'},
+    //         withCredentials: true, //не знаю зачем, но пусть будет
+    //     }
+// ВОЗВРАЩАЕТ ЧТО-ТО ПОДОБНОЕ
+// {
+//     "status": 200 - всео ок
+//               400 - пользователь уже зарегистрирован
+// }
 
 // ------------------------------------

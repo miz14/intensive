@@ -20,7 +20,7 @@ const UploadPage = () => {
         formData.append('accessToken', userToken);
         formData.append('file', file);
         formData.append('filename', file.name)
-        console.log(formData.get("filename"))
+        console.log(formData.get("file"))
 
         try {
             const response = await axios.post(URL_UPLOAD, formData, {
@@ -56,4 +56,4 @@ const UploadPage = () => {
     );
 };
 
-export {UploadPage}
+export default UploadPage;

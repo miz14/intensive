@@ -6,8 +6,6 @@
     --333-cl: #333;
     --666-cl: #666;
 }
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
-
 .header {
     margin-bottom: 30px;
 }

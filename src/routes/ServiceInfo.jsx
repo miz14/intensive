@@ -6,10 +6,14 @@ import post_res1 from '../examples/1/results_clean.json';
 import post_res2 from '../examples/2/results_clean.json';
 import post_res3 from '../examples/3/results_clean.json';
 
+import work from "../imgs/work.svg";
+
 import { useState } from 'react';
-import { render } from 'react-dom';
+
+import useMediaQuery from '../components/MediaQuer';
 
 const ServiceInfoPage = () => {
+    const notMobile = useMediaQuery("(min-width: 1100px)");
     const [i, setI] = useState(0);
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -229,16 +233,27 @@ const ServiceInfoPage = () => {
         })
         
     }
-    function lol() {
-        console.log(text_counter)
-    }
 	return (
 		<main>
 			<div className="uk-container uk-container-large">
+                <div className='main_column_description'>
+
+                </div>
+                <div className="infopage_zyv_block">
+                    <div className='infopage_zyv_text'>
+                        {/* <h1 className="infopage_zyv color_n1">ЗНАТЬ</h1>
+                        <h1 className="infopage_zyv color_n2">УМЕТЬ</h1>
+                        <h1 className="infopage_zyv color_n3">ВЛАДЕТЬ</h1> */}
+                        <div className='infopage_zyv_description'>Собирайте свое цифровое портфолио и открывайте новые возможности для обучения и работы!</div>
+                    </div>
+                    {/* {notMobile? (<img src={work} className="img_work" alt="work.svg"/>) : null} */}
+                    
+                </div>
+                
 				<div className='main_column'>
                     <div className='main_column_demonstration'>
                         <h1 className='demonstration_title'>Как это работает?</h1>
-                        <button className='demonstration_btn' onClick={demonstratonStart}>Попробовать</button>
+                        <button className='uk-button uk-button-default confirm-button demonstration_btn' onClick={demonstratonStart}>Попробовать</button>
                     </div>
 					<section id="section1" className='demonstration_stage_up display_none'>
 						<label htmlFor="demonstration" className='demonstration_stage_text'>ШАГ 1. ВЫБИРИТЕ ТЕКСТ ДЛЯ ОБРАБОТКИ</label>
@@ -267,8 +282,8 @@ const ServiceInfoPage = () => {
 							</div>
 						</div>
                         <div className='demonstration_btn_block'>
-                            <button disabled={btn1} className='demonstration_btn btn1' onClick={nextText}>Другой</button>
-                            <button disabled={btn1} className='demonstration_btn btn1' onClick={completeSection1}>Продолжить</button>
+                            <button disabled={btn1} className='uk-button uk-button-default confirm-button demonstration_btn' onClick={nextText}>Другой</button>
+                            <button disabled={btn1} className='uk-button uk-button-default confirm-button demonstration_btn' onClick={completeSection1}>Продолжить</button>
                         </div>
 					</section>
                     <section id="section2" className='demonstration_stage_up display_none'>
@@ -287,8 +302,8 @@ const ServiceInfoPage = () => {
                             </div>
                         </div>
                         <div className='demonstration_btn_block'>
-                            <button disabled={btn2} className='demonstration_btn btn1' onClick={repeatTest}>Повторить</button>
-                            <button disabled={btn2} className='demonstration_btn btn1' onClick={completeSection2}>Продолжить</button>
+                            <button disabled={btn2} className='uk-button uk-button-default confirm-button demonstration_btn' onClick={repeatTest}>Повторить</button>
+                            <button disabled={btn2} className='uk-button uk-button-default confirm-button demonstration_btn' onClick={completeSection2}>Продолжить</button>
                         </div>
                     </section>
                     <section id="section3" className='demonstration_stage_up display_none'>
@@ -297,24 +312,24 @@ const ServiceInfoPage = () => {
                             {rsult_block()}
                         </div>
                         <div className='demonstration_btn_block'>
-                            <button  className='demonstration_btn btn1' onClick={repeatDemonstration}>Сначала</button>
-                            <button className='demonstration_btn btn1' onClick={closeDemonstration}>Завершить</button>
+                            <button  className='uk-button uk-button-default confirm-button demonstration_btn' onClick={repeatDemonstration}>Сначала</button>
+                            <button className='uk-button uk-button-default confirm-button demonstration_btn' onClick={closeDemonstration}>Завершить</button>
                         </div>
                     </section>
 				</div>
-				<h4 className="uk-text-bold">Что такое цифровой профиль студента?</h4>
+				{/* <h4 className="uk-text-bold">Что такое цифровой профиль студента?</h4>
 				<p><span className="text_color3 text_weight500">Цифровой профиль студента</span> — это электронное портфолио , визуализирующее знания и компетенции, которые получает студент в результате освоения им основных и дополнительных дисциплин в процессе обучения в вузе.</p>
 				<p>Наш сервис собирает цифровой след, что позваляет создавать и пополнять цифровое портфолио обучающегося, включая в него не только достижения, но и круг интересов, увлечений. </p>
 				<img src={infograph} className="uk-align-center" alt="graph" />
 				<p>Используя современные методы анализа больших данных, из цифрового профиля можно успешно извлечь актуальную и объективную информацию для диагностики профессиональной компетентности будущего выпускника и определить факторы, которые сказались на ее формировании. Сравнение полученных данных предоставит  студенту возможность составить резюме, чтобы в соответствии с тем, как он обучался, можно было находить целевые вакансии.</p>
 				<p>Так как процесс формирования цифрового профиля предполагает сбор данных о студентах в течение всего времени обучения, то можно рассчитывать, что он также поможет студенту оценить уровень собственных знаний и навыков в различных областях обучения, своевременно понять, куда двигаться дальше, исходя из уровня сформированных компетенций, и определить, насколько он успешен в процессе усвоения знаний.</p>
 				<p>Для будущего работадателя появляется возможность оценить, какие навыки получил потенциальный сотрудник за время своего обучения, в каких направлениях проявлял инициативу, какова его сфера интересов.</p>
-				<p>А университету, цифровой профиль, например, позволит провести отбор студентов, имеющих значительные достижения, для поощрения их повышенной стипендией, модернизировать образовательные обучающие программы, редактировать содержание базовых курсов и включать в учебный план новые необходимые и недостающие дисциплины.</p>
+				<p>А университету, цифровой профиль, например, позволит провести отбор студентов, имеющих значительные достижения, для поощрения их повышенной стипендией, модернизировать образовательные обучающие программы, редактировать содержание базовых курсов и включать в учебный план новые необходимые и недостающие дисциплины.</p> */}
 
 			</div>
-            <p className='text3' style={{ whiteSpace: 'pre-wrap' }}>
+            {/* <p className='text3' style={{ whiteSpace: 'pre-wrap' }}>
             {"Example #2: \n new line or \u000A new line"}
-            </p>
+            </p> */}
 		</main>
 	)
 }

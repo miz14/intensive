@@ -8,6 +8,8 @@ const authSlice = createSlice({
             user: null,
             password: null,
             accessToken: null,
+            firstName: null,
+            lastName: null
         }
     },
     reducers: {
@@ -19,6 +21,8 @@ const authSlice = createSlice({
                 user: null,
                 password: null,
                 accessToken: null,
+                firstName: null,
+                lastName: null
             }
 
         }   
