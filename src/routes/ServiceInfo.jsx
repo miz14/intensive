@@ -241,6 +241,9 @@ const ServiceInfoPage = () => {
                 </div>
                 <div className="infopage_zyv_block">
                     <div className='infopage_zyv_text'>
+                        <div>
+                        Название эвента мероприятия
+                        </div>
                         {/* <h1 className="infopage_zyv color_n1">ЗНАТЬ</h1>
                         <h1 className="infopage_zyv color_n2">УМЕТЬ</h1>
                         <h1 className="infopage_zyv color_n3">ВЛАДЕТЬ</h1> */}

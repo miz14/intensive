@@ -69,7 +69,7 @@ const Traces = () => {
         try {
             //const result = await axios.get(URL_TRACES +"/get/"+ Token);
             //const result = JSON.parse('[{"id": 12,"sledName" : "nazv", "fileName" : "fileName"}]')
-            const result = [{"id": 12,"sledName" : "naz23213 213 123 21 13 213 1231 2312 2 v", "fileName" : "fil324 23 4234 234 32 4324 234 234 23 43eName", "zyv": [15, 40, 50]}];
+            const result = [{"sledName" : "выполнение командных заданий", "fileName" : "задания.txt", "zyv": [15, 60, 30]}];
             for (var el in result) {
                 result[el]["id"] = nanoid(10);
             }
@@ -97,7 +97,7 @@ const Traces = () => {
                         <div className="traces_sled_helper">
                             <div className="traces_sled_text">
                                 <div><img src={sled} alt="sled.svg"/> {e.sledName}</div>
-                                <a href={URL_TRACES + "/" + Token + e.sledName + "/" + e.fileName } download={e.fileName}>{e.fileName}</a> 
+                                <a href={URL_TRACES + "/" + Token +"/"+ e.sledName + "/" + e.fileName } download={e.fileName}>{e.fileName}</a> 
                             </div>
                             <div className="traces_sled_buttons">
                                 <button disabled>

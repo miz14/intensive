@@ -301,8 +301,9 @@ body {
     left: -226%;
 }
 .demonstration_text_card {
-    width: 100%;
+    width: 30.7%;
     height: 378.59px;
+    
 }
 .demonstration_text {
     overflow: hidden;
@@ -318,6 +319,10 @@ body {
     -webkit-line-clamp: 2; /* number of lines to show */
     -webkit-box-orient: vertical;
 }
+.demonstration_text_block_head > h2 {
+    word-wrap: break-word;
+    width: 100%;
+}
 .demonstration_stage_up {
     margin-top: 50px;
 }
@@ -331,7 +336,7 @@ body {
     justify-content: space-around;
 }
 .demonstration_btn {
-    padding: 0 3%;
+    padding: 0 calc(2% + 4px);
 }
 .user_text {
     font-size: 16px;
@@ -557,6 +562,7 @@ body {
     overflow-y: auto;
     max-height: 600px;
     min-height: 430px;
+    margin: 0 ;
     /* background-color: orchid; */
 
     padding: 10px;
