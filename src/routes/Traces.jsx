@@ -69,7 +69,7 @@ const Traces = () => {
         try {
             //const result = await axios.get(URL_TRACES +"/get/"+ Token);
             //const result = JSON.parse('[{"id": 12,"sledName" : "nazv", "fileName" : "fileName"}]')
-            const result = [{"id": 12,"sledName" : "naz23213 213 123 21 13 213 1231 2312 2 v", "fileName" : "fileName"},{"id": 12,"sledName" : "naz23213 213 123 21 13 213 1231 2312 2 v", "fileName" : "fileName"},{"id": 12,"sledName" : "naz23213 213 123 21 13 213 1231 2312 2 v", "fileName" : "fileName"},{"id": 12,"sledName" : "naz23213 213 123 21 13 213 1231 2312 2 v", "fileName" : "fileName"},{"id": 12,"sledName" : "naz23213 213 123 21 13 213 1231 2312 2 v", "fileName" : "fileName"},{"id": 12,"sledName" : "naz23213 213 123 21 13 213 1231 2312 2 v", "fileName" : "fileName"},{"id": 12,"sledName" : "naz23213 213 123 21 13 213 1231 2312 2 v", "fileName" : "fileName"}];
+            const result = [{"id": 12,"sledName" : "naz23213 213 123 21 13 213 1231 2312 2 v", "fileName" : "fil324 23 4234 234 32 4324 234 234 23 43eName", "zyv": [15, 40, 50]}];
             for (var el in result) {
                 result[el]["id"] = nanoid(10);
             }
@@ -94,18 +94,25 @@ const Traces = () => {
                     return( 
                     <>
                     <li key={e.id}>
-                        
-                        <div className="traces_sled_text">
-                            <div><img src={sled} alt="sled.svg"/> {e.sledName}</div>
-                            <a href={URL_TRACES + "/" + Token + e.sledName + "/" + e.fileName } download={e.fileName}>{e.fileName}</a> 
+                        <div className="traces_sled_helper">
+                            <div className="traces_sled_text">
+                                <div><img src={sled} alt="sled.svg"/> {e.sledName}</div>
+                                <a href={URL_TRACES + "/" + Token + e.sledName + "/" + e.fileName } download={e.fileName}>{e.fileName}</a> 
+                            </div>
+                            <div className="traces_sled_buttons">
+                                <button disabled>
+                                    <img src={redact}/>
+                                </button>
+                                <button onClick={() => deleteSled(e.id)}>
+                                    <img src={deleteimg}/>
+                                </button>
+                            </div>
+                            
                         </div>
-                        <div className="traces_sled_buttons">
-                            <button disabled>
-                                <img src={redact}/>
-                            </button>
-                            <button onClick={() => deleteSled(e.id)}>
-                                <img src={deleteimg}/>
-                            </button>
+                        <div className="traces_sled_helper1">
+                            <div className="demonstration_res_know traces_sled_zyv">Знать: {e.zyv[0]}%</div>
+                            <div className="demonstration_res_can traces_sled_zyv">Уметь: {e.zyv[0]}%</div>
+                            <div className="demonstration_res_master traces_sled_zyv">Владеть: {e.zyv[2]}%</div>
                         </div>
                     </li>
                     </>)

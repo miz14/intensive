@@ -518,13 +518,13 @@ body {
     
 }
 .color_n1 {
-    color:var(--color-n1);
+    color:orange;
 }
 .color_n2 {
-    color:var(--color-n2);
+    color:greenyellow;
 }
 .color_n3 {
-    color:var(--color-n3);
+    color:deepskyblue;
 }
 .register_button_block {
     display: flex;
@@ -571,9 +571,30 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
     margin-bottom: 20px;
     padding: 10px 20px;
+}
+.traces_sled_helper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
+}
+.traces_sled_helper1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    max-width: 400px;
+    overflow: hidden;
+}   
+.traces_sled_zyv {
+    width: 50%;
+    font-size: 13px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+    color:var(--black);
+    font-weight: 500;
 }
 .traces_sled_text {
     display: flex;
@@ -587,6 +608,7 @@ body {
     -webkit-line-clamp: 1; /* number of lines to show */
             line-clamp: 1;
     -webkit-box-orient: vertical;
+    font-size: 20px;
 }
 .traces_sled_buttons {
     min-width: 120px;
@@ -594,13 +616,19 @@ body {
 
 .traces_sled_text > a {
     margin: 0;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     font-size: 18px;
     color: var(--color4);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 .traces_sled_buttons {
     display: flex;
     gap: 10px;
+    
 }
 .traces_sled_buttons > button > img {
     height: 26px;
@@ -659,7 +687,7 @@ body {
 }
 
 @media only screen and (max-width: 680px) {
-    
+  
     .logo_block_name {
         font-size:18px;
     }
@@ -672,10 +700,21 @@ body {
     }
 }
 @media only screen and (max-width: 560px) {
+    .traces_sled_text > a {
+        font-size: 14px;
+    }
+    .traces_sled_text > div {
+        font-size: 16px;
+    }
+    .traces_sled_text {
+        gap: 4px;
+    }
     .demonstration_title {
         margin-bottom: 20px;
     }
-    
+    .traces_sled_zyv {
+        font-size: 11px;
+    }
     .infopage_zyv {
         font-size: 40px;
     }
@@ -747,7 +786,6 @@ body {
 }
 
 @media only screen and (max-width: 810px) {
-    
     #demonstration_res {
         display: flex;
         flex-wrap: wrap;
