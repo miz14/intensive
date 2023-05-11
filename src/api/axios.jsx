@@ -2,11 +2,11 @@ import axios from "axios";
 
 export default axios.create(
     {
-        baseURL: 'http://localhost:3000'
+        baseURL: 'http://localhost:8888/api'
     }
 );
-const URL_AUTH = "/auth";
-const URL_UPLOAD = "/upload";
+const URL_AUTH = "/login";
+const URL_UPLOAD = "/analyze";
 const URL_REG = "/register";
 const URL_TRACES = '/traces';
 export {URL_AUTH, URL_UPLOAD, URL_REG, URL_TRACES}; 
