@@ -241,12 +241,6 @@ const ServiceInfoPage = () => {
                 </div>
                 <div className="infopage_zyv_block">
                     <div className='infopage_zyv_text'>
-                        <div>
-                        Название эвента мероприятия
-                        </div>
-                        {/* <h1 className="infopage_zyv color_n1">ЗНАТЬ</h1>
-                        <h1 className="infopage_zyv color_n2">УМЕТЬ</h1>
-                        <h1 className="infopage_zyv color_n3">ВЛАДЕТЬ</h1> */}
                         <div className='infopage_zyv_description'>Собирайте свое цифровое портфолио и открывайте новые возможности для обучения и работы!</div>
                     </div>
                     {/* {notMobile? (<img src={work} className="img_work" alt="work.svg"/>) : null} */}
