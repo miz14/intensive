@@ -67,9 +67,10 @@ const Traces = () => {
     const rsult_block = async () => { 
         const place= document.querySelector(".traces_left_slider");
         try {
-            const result = await axios.get(URL_TRACES +"/get/"+ Token);
+            const res = await axios.get(URL_TRACES +"/get/"+ Token);
             //const result = JSON.parse('[{"id": 12,"sledName" : "nazv", "fileName" : "fileName"}]')
             //const result = [{"sledName" : "выполнение командных заданий", "fileName" : "задания.txt", "zyv": [15, 60, 30]}];
+            var result = res.data
             for (var el in result) {
                 result[el]["id"] = nanoid(10);
             }
@@ -86,8 +87,6 @@ const Traces = () => {
                 } catch(err) {
                     console.log("err");
                 }
-                
-                
             }
             const setupBlocks = () => {
                 setRes(result.map((e) => {
@@ -118,10 +117,12 @@ const Traces = () => {
                     </>)
                 }))
             } 
+            
         setupBlocks();  
             
             
         } catch (err) {
+            console.log(err)
             if (!err?.response) {
                 setError('No Server Response');
             } else if (err?.response?.status === 400) {
